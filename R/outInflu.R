@@ -1,6 +1,6 @@
 ## Created by Brian Walters; bfwalters83@yahoo.com
 ## Creation date: June 29, 2009
-## Modified Date: October 21, 2009
+## Modified Date: October 28, 2009
 
 ############################################################
 ## Function to find outliers and influential observations ##
@@ -59,3 +59,33 @@ outInflu <- function(object){
   return(dat)
 }
 
+
+#################################
+## Default Generic Plot Method ##
+#################################
+
+plot.nnDoi <- function(x, ...){
+
+  ## Checks ##
+  elip.args <- names(list(...))
+  
+  if(length(elip.args) != 0){
+    for(i in 1:length(elip.args)){
+      if(elip.args[i] %in% names(formals(plot.default)) == TRUE){next}
+      else if(elip.args[i] %in% names(par()) == TRUE){next}
+      else{stop("'",elip.args[i], "' is not a graphical parameter")}
+    }
+  }
+  ##========##
+  xy <- list(x = x$neighbor.count, y = x$standardized.residuals)
+  el <- list(...)
+  argu <- c(xy, el)
+
+  if(! "xlab" %in% names(argu)){argu <- append(argu, list(xlab = "Number of Times Used as Neighbor"))} #Default x axis label
+  if(! "ylab" %in% names(argu)){argu <- append(argu, list(ylab = "Standardized Residuals"))} #Default y axis label
+  if(! "xlim" %in% names(argu)){argu <- append(argu, list(xlim = c(loLim(min(xy$x)), hiLim(max(xy$x)))))} #Default x axis limits
+  if(! "ylim" %in% names(argu)){argu <- append(argu, list(ylim = c(floor(min(xy$y)-1), ceiling(max(xy$y)+1))))} #Default y axis limits
+  if(! "main" %in% names(argu)){argu <- append(argu, list(main = "Outliers and Influential Observations"))} #Default main graph title
+  
+  do.call("plot", argu)
+}

@@ -13,24 +13,27 @@ bias(object, mode = "groups")
 }
 
 \arguments{
-  \item{object}{object of class \code{nnDgrps}.}
-  \item{mode}{can either be set to \code{groups} to assess means of
-  groups of observations against means of predictions, or \code{points}
+  \item{object}{object of class \code{"\link[=grouper]{nnDgrps}"}}
+  \item{mode}{can either be set to \code{"groups"} to assess means of
+  groups of observations against means of predictions, or \code{"points"}
   to assess each observation against its corresponding prediction.}
 }
 
 \value{
-  An object of \code{\link[base]{class}} \code{nnDbias}.
+  An object of \code{\link[base]{class}} \code{"nnDbias"}.\cr
 
-  When mode = \code{groups}, \code{nnDbias} is a list that contains the
+  When mode = \code{"groups"}, object is a list that contains the
   following components:
-  \item{mean.predictions}{means of the groups of predictions.}
-  \item{mean.observations}{means of the groups of observations.}
-
-  When mode = \code{points} the list contains:
-  \item{predictions}{vector of predictions.}
-  \item{observations}{vector of observations.}
-
+  \tabular{ll}{
+    \code{mean.predictions}\tab a vector of means of the groups of predictions.\cr
+    \code{mean.observations}\tab a vector of means of the groups of observations.\cr
+  }
+  
+  When mode = \code{"points"} the list contains:
+  \tabular{ll}{
+    \code{predictions}\tab vector of predictions.\cr
+    \code{observations}\tab vector of observations.\cr
+  }
 }
 
 \references{
@@ -43,19 +46,22 @@ bias(object, mode = "groups")
   Brian Walters \email{bfwalters83@yahoo.com}
 }
 
+\seealso{
+  \code{\link{grouper}}, \code{\link{arealBias}}
+}
+
 \examples{
-data(VOLUME)
-data(VOLUMEnnIndex_k20)
-nnIndex <- as.matrix(VOLUMEnnIndex_k20)
+data(LuceVolume)
+data(LuceVolume_indx)
 
-##First use grouper to make the nnDgrps object
-grps <- grouper(VOLUME$refVOLUME, VOLUME$predVOL_k20, nnIndex = nnIndex)
+##First use grouper to make the \code{"nnDgrps"} object
+grps <- grouper(LuceVolume$ref.volume, LuceVolume$pred.vol_k18, LuceVolume_indx)
 
-##Using mode \code{groups}
+##Using mode \code{"groups"}
 bg <- bias(grps, mode = "groups")
 plot(bg)
 
-##Using mode \code{points}
+##Using mode \code{"points"}
 bp <- bias(grps, mode = "points")
 plot(bp)
 }

@@ -25,7 +25,7 @@
 }
 
 \author{
-  Brian Walters \email{bfwalters83@yahoo.com}
+  Brian Walters \email{bfwalters83@yahoo.com}, Zhen Zhang \email{zhangz19@stt.msu.edu}, Andrew O. Finley \email{finleya@msu.edu}
 
   Maintainer: Brian Walters
 }
@@ -50,29 +50,3 @@
 }
 
 \keyword{package}
-
-\examples{
-##Categorical Data
-data(FORGRP)
-
-x <- categorical(reference.set = FORGRP$refFORGRP,
-predicted.set = FORGRP$predFORGRP)
-x
-
-##Continuous Data
-data(VOLUME)
-data(VOLUMEnnIndex_k20)
-nnIndex <- as.matrix(VOLUMEnnIndex_k20)
-
-grps <- grouper(ref.set = VOLUME$refVOLUME, pred.set = VOLUME$predVOL_k20,
-nnIndex = nnIndex)
-
-sc <- scedast(groups = grps) ##Test of scedasticity
-plot(sc)
-
-oi <- outInflu(object = grps)##Potential outliers and influential observations
-plot(oi, pch = 20)
-
-bg <- bias(grps, mode = "groups")##Bias assessment
-plot(bg)
-}

@@ -1,6 +1,6 @@
-\name{FORGRP}
+\name{LuceForgrp}
 \Rdversion{1.1}
-\alias{FORGRP}
+\alias{LuceForgrp}
 \docType{data}
 \title{Forest Inventory Forest Group Type Data on Subplots in Luce County, Michigan}
 
@@ -9,16 +9,16 @@
   Analysis National Program of the USDA Forest Service Database.
 }
 
-\usage{data(FORGRP)}
+\usage{data(LuceForgrp)}
 
 \format{
   A data frame containing 734 rows the following 4 columns:
   \describe{
     \item{\code{plt_cn}}{the plot identifier}
     \item{\code{subp}}{the subplot identifier}
-    \item{\code{refFORGRP}}{forest group on the subplot}
-    \item{\code{predFORGRP}}{predicted forest group on the subplot for
-      k = 11}
+    \item{\code{ref.forgrp}}{forest group on the subplot}
+    \item{\code{pred.forgrp}}{predicted forest group on the subplot for
+      k = 12}
   }
 }
 

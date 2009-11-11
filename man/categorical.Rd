@@ -24,15 +24,15 @@ categorical(reference.set, predicted.set, class.names = NULL)
 \details{
   Using the optional argument \code{class.names} will insert the name of
   each class into the output, otherwise the class numbers extracted from
-  the reference set are used.
+  the reference set are used to identify classes.
 }
 
 \value{
-  \code{categorical} returns an object of \code{\link[base]{class}}
-  \code{nnDcat}, which is a list containing the following components:
+  Function returns an object of \code{\link[base]{class}}
+  \code{"nnDcat"}, which is a list containing the following components:
   
   \item{Confusion.Matrix}{matrix comparing the reference set to the
-    predicted set. The major diagonal is where the two agree.}
+    predicted set. The major diagonal is agreement between the two sets.}
   \item{Overall.Accuracy}{overall accuracy of the classification.}
   \item{Users.Accuracy}{user's accuracy for each class.}
   \item{Producers.Accuracy}{producer's accuracy for each class.}
@@ -63,19 +63,17 @@ categorical(reference.set, predicted.set, class.names = NULL)
 }
 
 \examples{
-data(FORGRP)
+data(LuceForgrp)
 
-x <- categorical(reference.set = FORGRP$refFORGRP,
-predicted.set = FORGRP$predFORGRP)
+x <- categorical(LuceForgrp$ref.forgrp, LuceForgrp$pred.forgrp)
 x
 
-##Add class names
+## Add class names
 clsnms <- cbind(c(100,120,380,400,700,800,900,999), c("WRJ Pine",
 "Spruce/Fir", "Exotic SW", "Oak/Pine", "Elm/Ash/Cottonwood",
 "Maple/Beech/Birch", "Aspen/Birch", "Nonstocked"))
 
-x <- categorical(reference.set = FORGRP$refFORGRP,
-predicted.set = FORGRP$predFORGRP, class.names = clsnms)
+x <- categorical(LuceForgrp$ref.forgrp, LuceForgrp$pred.forgrp, class.names = clsnms)
 x
 }
 

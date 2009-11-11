@@ -1,6 +1,6 @@
 ## Created by Brian Walters; bfwalters83@yahoo.com
 ## Creation date: October 20, 2009
-## Modified date: 
+## Modified date: October 28, 2009
 
 ######################################################
 ## Function to perform categorical diagnostic tests ##
@@ -105,4 +105,25 @@ categorical <- function(reference.set, predicted.set, class.names=NULL){
   
   return(cat.list)
   ##=======================##
+}
+
+##################################
+## Default Generic Print Method ##
+##################################
+
+print.nnDcat <- function(x, ...){
+  cat("Confusion Matrix:\n")
+  print(x[[1]])
+  cat("\nOverall Accuracy:\n")
+  cat(x[[2]][1], "%\n", sep="")
+  cat("\nUser's Accuracy (%):\n")
+  print(x[[3]])
+  cat("\nProducer's Accuracy (%):\n")
+  print(x[[4]])
+  cat("\nOverall Kappa Coefficient:\n")
+  cat(x[[5]][1],"\n")
+  cat("\nUser's Conditional Kappa:\n")
+  print(x[[6]])
+  cat("\nProducer's Conditional Kappa:\n")
+  print(x[[7]])
 }

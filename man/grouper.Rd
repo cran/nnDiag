@@ -1,7 +1,7 @@
 \name{grouper}
 \Rdversion{1.1}
 \alias{grouper}
-\title{Produce ordered groups of data elements for use in diagnostic tests}
+\title{Produce Ordered Groups of Data Elements}
 
 \description{
   The purpose of this function is to produce an object that can be used
@@ -13,14 +13,14 @@
 }
 
 \usage{
-grouper(ref.set, pred.set, nnIndex, group.size = 25, best = TRUE)
+grouper(reference.set, predicted.set, nnIndex, group.size = 25, best = TRUE)
 }
 
 \arguments{
-  \item{ref.set}{vector of observed values.}
-  \item{pred.set}{vector of predicted values.}
-  \item{nnIndex}{matrix of nearest neighbors index.}
-  \item{group.size}{number of elements to be in each group.}
+  \item{reference.set}{vector of observed values}
+  \item{predicted.set}{vector of predicted values}
+  \item{nnIndex}{data.frame of nearest neighbors index}
+  \item{group.size}{a single integer, number of elements to be in each group}
   \item{best}{logical indicating whether the function will use the exact
     \code{group.size} input or if it will find the \dQuote{best} size
     nearest to the \code{group.size} input.}
@@ -29,7 +29,7 @@ grouper(ref.set, pred.set, nnIndex, group.size = 25, best = TRUE)
 \details{
   The \code{nnIndex} matrix will have a column for each corresponding k
   used in the kNN classification.  Each element in the matrix should be
-  in reference to the \code{ref.set} vector position of the observed
+  in reference to the \code{reference.set} vector position of the observed
   value.
 
   If the remainder number of data elements do not fill a
@@ -42,7 +42,7 @@ grouper(ref.set, pred.set, nnIndex, group.size = 25, best = TRUE)
   \code{group.size} input exactly.
 }
 \value{
-  Returns an object of \code{\link[base]{class}} \code{nnDgrps},
+  Returns an object of \code{\link[base]{class}} \code{"nnDgrps"},
   which is a list containing the following components:
 
   \item{ordered.data}{data frame of the inputed data ordered by
@@ -66,19 +66,22 @@ grouper(ref.set, pred.set, nnIndex, group.size = 25, best = TRUE)
   Brian Walters \email{bfwalters83@yahoo.com}
 }
 
+\seealso{
+  Functions that use \code{"nnDgrps"} objects: \code{\link{scedast}},
+  \code{\link{outInflu}}, \code{\link{bias}}
+}
+
 \examples{
-data(VOLUME)
-data(VOLUMEnnIndex_k20)
-nnIndex <- as.matrix(VOLUMEnnIndex_k20)
+data(LuceVolume)
+data(LuceVolume_indx)
 
 ##Using the defaults
-x <- grouper(ref.set = VOLUME$refVOLUME, pred.set = VOLUME$predVOL_k20,
-nnIndex = nnIndex)
+x <- grouper(LuceVolume$ref.volume, LuceVolume$pred.vol_k18, LuceVolume_indx)
 x
 
 ##Not using the defaults
-x <- grouper(ref.set = VOLUME$refVOLUME, pred.set = VOLUME$predVOL_k20,
-nnIndex = nnIndex, group.size = 37, best = FALSE)
+x <- grouper(LuceVolume$ref.volume, LuceVolume$pred.vol_k18, LuceVolume_indx,
+group.size = 37, best = FALSE)
 x
 }
 

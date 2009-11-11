@@ -14,8 +14,8 @@ rmse(reference.set, predicted.set)
 }
 
 \arguments{
-  \item{reference.set}{vector of observed values.}
-  \item{predicted.set}{vector or matrix of predicted values.}
+  \item{reference.set}{vector of observed values}
+  \item{predicted.set}{vector or matrix of predicted values}
 }
 
 \details{
@@ -40,16 +40,14 @@ rmse(reference.set, predicted.set)
 }
 
 \examples{
-data(VOLUME)
+data(LuceVolume)
 
 ##Using one predicted set
-x <- rmse(reference.set = VOLUME$refVOLUME, predicted.set =
-VOLUME$predVOL_k10)
+x <- rmse(LuceVolume$ref.volume, LuceVolume$pred.vol_k18)
 x
 
 ##Using multiple predicted sets
-x <- rmse(reference.set = VOLUME$refVOLUME, predicted.set =
-as.matrix(VOLUME[,4:10]))
+x <- rmse(LuceVolume$ref.volume, as.matrix(LuceVolume[,4:9]))
 x
 }
 

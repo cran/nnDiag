@@ -1,7 +1,7 @@
 \name{outInflu}
 \Rdversion{1.1}
 \alias{outInflu}
-\title{Find potential outliers and influential observations}
+\title{Find Potential Outliers and Influential Observations}
 
 \description{
   Assesses the relationship between standardized residuals and the sum
@@ -15,16 +15,16 @@ outInflu(object)
 }
 
 \arguments{
-  \item{object}{object of class \code{nnDgrps}.}
+  \item{object}{object of class \code{"\link[=grouper]{nnDgrps}"}}
 }
 
 \value{
-  An object of \code{\link[base]{class}} \code{nnDoi}, which is a list
+  An object of \code{\link[base]{class}} \code{"nnDoi"}, which is a list
   containing the following components:
   
-  \item{neighbor.count}{number of times used as a neighbor in kNN classification.}
+  \item{neighbor.count}{number of times used as a neighbor in kNN classification}
   \item{standardized.residuals}{standardized residuals (the ratios of
-  residuals and their standard deviations.}
+  residuals and their standard deviations)}
 }
 
 \references{
@@ -37,17 +37,19 @@ outInflu(object)
   Brian Walters \email{bfwalters83@yahoo.com}
 }
 
-\examples{
-data(VOLUME)
-data(VOLUMEnnIndex_k20)
-nnIndex <- as.matrix(VOLUMEnnIndex_k20)
+\seealso{
+  \code{\link{grouper}}
+}
 
-##First use grouper to make the nnDgrps object
-grps <- grouper(VOLUME$refVOLUME, VOLUME$predVOL_k20, nnIndex = nnIndex)
+\examples{
+data(LuceVolume)
+data(LuceVolume_indx)
+
+##First use grouper to make the \code{"nnDgrps"} object
+grps <- grouper(LuceVolume$ref.volume, LuceVolume$pred.vol_k18, LuceVolume_indx)
 
 x <- outInflu(object = grps)
-
-plot(x, pch = 20)
+\dontrun{plot(x)}
 
 }
 

@@ -10,19 +10,19 @@
 }
 
 \usage{
-scedast(groups)
+scedast(object)
 }
 
 \arguments{
-  \item{groups}{object of class \code{nnDgrps}.}
+  \item{object}{object of class \code{"\link[=grouper]{nnDgrps}"}}
 }
 
 \value{
-  An object of \code{\link[base]{class}} \code{nnDsced}, which is a list
+  An object of \code{\link[base]{class}} \code{"nnDsced"}, which is a list
   containing the following components:
 
-  \item{mean.prediction}{means of the groups of predictions.}
-  \item{stdev.residuals}{the standard deviations of the residuals groups.}
+  \item{mean.prediction}{a vector of means of the groups of predictions}
+  \item{stdev.residuals}{a vector of the standard deviations of the residual groups}
 }
 
 \references{
@@ -35,21 +35,20 @@ scedast(groups)
   Brian Walters \email{bfwalters83@yahoo.com}
 }
 
-
 \examples{
-data(VOLUME)
-data(VOLUMEnnIndex_k20)
-nnIndex <- as.matrix(VOLUMEnnIndex_k20)
+data(LuceVolume)
+data(LuceVolume_indx)
 
-##First use grouper to make the nnDgrps object
-grps <- grouper(VOLUME$refVOLUME, VOLUME$predVOL_k20, nnIndex = nnIndex)
+##First use grouper to make the \code{"nnDgrps"} object
+grps <- grouper(LuceVolume$ref.volume, LuceVolume$pred.vol_k18, LuceVolume_indx)
 
-x <- scedast(groups = grps)
-
+x <- scedast(object = grps)
+\dontrun{
 plot(x)
 plot(x, ylab = "Standard Deviation of Volume Residuals (ft^3/acre)",
 xlab = "Mean Volume Predictions(ft^3/acre)", ylim = c(500,2500), xlim =
 c(500,2500), pch = 20)
+}
 }
 
 \keyword{misc}
