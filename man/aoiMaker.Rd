@@ -41,7 +41,7 @@ aoiMaker(ref.coords, num.aoi, image, mask = NULL, aoi.size = 1000, min.points = 
   than 10.  An error will display if \code{min.points} is set less than that.
 
   The seed option is available so identical AOIs can be made from
-  differenct images.  See \code{\link[=.Random.seed]{set.seed}} for more information.
+  different images.  See \code{\link[=.Random.seed]{set.seed}} for more information.
 }
 
 \value{
@@ -69,7 +69,7 @@ aoiMaker(ref.coords, num.aoi, image, mask = NULL, aoi.size = 1000, min.points = 
 }
 
 \author{
-  Brian Walters \email{bfwalters83@yahoo.com}
+  Brian Walters \email{walte137@msu.edu}
 }
 
 \seealso{

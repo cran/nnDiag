@@ -36,7 +36,7 @@ rmse(reference.set, predicted.set)
 }
 
 \author{
-  Brian Walters \email{bfwalters83@yahoo.com}
+  Brian Walters \email{walte137@msu.edu}
 }
 
 \examples{

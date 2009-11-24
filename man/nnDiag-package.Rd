@@ -17,15 +17,15 @@
   \tabular{ll}{
     Package: \tab nnDiag\cr
     Type: \tab Package\cr
-    Version: \tab 0.0-1\cr
-    Date: \tab 2009-10-21\cr
+    Version: \tab 0.0-4\cr
+    Date: \tab 2009-11-24\cr
     License: \tab GPL (>= 2)\cr
     LazyLoad: \tab yes\cr
   }
 }
 
 \author{
-  Brian Walters \email{bfwalters83@yahoo.com}, Zhen Zhang \email{zhangz19@stt.msu.edu}, Andrew O. Finley \email{finleya@msu.edu}
+  Brian Walters \email{walte137@msu.edu}, Andrew O. Finley \email{finleya@msu.edu}, Zhen Zhang \email{zhangz19@stt.msu.edu}
 
   Maintainer: Brian Walters
 }
@@ -34,6 +34,11 @@
   Hudson, W.D. and Ramm, C.W. (1987) Correct Formulation of the Kappa
   Coefficient of Agreement, \emph{Photogrammetric Engineering and Remote
     Sensing}. \bold{53}, 421--422.  
+  
+  McRoberts, R.E., Tomppo, E.O., Finley, A.O., Heikkinen, J. (2007)
+  Estimating areal means and variances of forest attributes using the
+  k-Nearest Neighbors technique and satellite imagery, \emph{Remote
+    Sensing of Environment}. \bold{111}, 466--480.
 
   McRoberts, R.E. (2009) Diagnostic tools for nearest neighbors
   techniques when used with satellite imagery, \emph{Remote Sensing of

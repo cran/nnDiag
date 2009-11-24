@@ -5,7 +5,12 @@
 \title{Forest Inventory Volume Data for Subplots in Luce County, Michigan}
 \description{
   This data was extracted from the freely available Forest Inventory and
-  Analysis National Program of the USDA Forest Service Database.
+  Analysis National Program of the USDA Forest Service Database.  The
+  coordinates of each subplot are not exact, they have been fuzzed and
+  swapped to meet privacy requirements established by Congress.  See
+  pages 10 - 12 in The Forest Inventory and Analysis Database: Database
+  Description and Users Manual Version 4.0 for Phase 2, Revision for
+  more information on the fuzzing and swapping of plot coordinates.
 }
 
 \usage{data(LuceVolume)}

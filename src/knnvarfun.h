@@ -1,0 +1,1 @@
+int knnvarfun(int k, double *ref, int refDim1, int refDim2, double *refdata, double *target, int tarDim1, int tarDim2, double *RMtrx, double *ytilde, double *varyhat, double *varmuhat, double *varterm2);

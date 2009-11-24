@@ -63,7 +63,7 @@ grouper(reference.set, predicted.set, nnIndex, group.size = 25, best = TRUE)
 }
 
 \author{
-  Brian Walters \email{bfwalters83@yahoo.com}
+  Brian Walters \email{walte137@msu.edu}
 }
 
 \seealso{

@@ -48,7 +48,7 @@ extrap(image, refSet.spectral, mask = NULL, verbose = TRUE)
 }
 
 \author{
-  Brian Walters \email{bfwalters83@yahoo.com}
+  Brian Walters \email{walte137@msu.edu}
 }
 
 \seealso{
@@ -61,6 +61,7 @@ LuceTasscap <- GDAL.open(system.file("data/LuceSubset_Tcap.tif", package = "nnDi
 LuceMask <- GDAL.open(system.file("data/LuceSubset_Mask.tif", package = "nnDiag"))
 
 spect <- as.matrix(LuceVolume_subset[12:14])
+\dontrun{
 x <- extrap(LuceTasscap, spect, LuceMask)
 plot(x)
 
@@ -69,7 +70,7 @@ coords <- as.matrix(LuceVolume_subset[,10:11])
 tcap.aoi <- aoiMaker(coords, 3, LuceTasscap, LuceMask, aoi.size = 20, min.points = 4)
 
 x <- extrap(tcap.aoi, spect)
-plot(x)
+plot(x)}
 }
 
 \keyword{misc}

@@ -25,7 +25,7 @@ arealBias(object, reference.set)
   \item{probability.estimates}{vector of the mean value of the reference
     points contained within each AOI}
   \item{lower.confidence}{vector of the lower confidence interval values}
-  \item{upper.confidence}{vector of the upper confidence intercal values}
+  \item{upper.confidence}{vector of the upper confidence interval values}
 }
 
 \references{
@@ -35,7 +35,7 @@ arealBias(object, reference.set)
 }
 
 \author{
-  Brian Walters \email{bfwalters83@yahoo.com}
+  Brian Walters \email{walte137@msu.edu}
 }
 
 \seealso{
