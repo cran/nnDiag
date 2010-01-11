@@ -50,8 +50,8 @@ int knnvarfun(int k, double *ref, int refDim1, int refDim2, double *refdata, dou
     }
 
     sigma[i] = sqrt(sum3/(k - sum1/k));
-    varmuhat[i] = pow(sigma[i],2)/pow(k,2)*sum1;
-    varyhat[i] = pow(sigma[i],2)/pow(k,2)*(sum1 - 2*k*sum2 + pow(k,2));
+    varmuhat[i] = pow(sigma[i],2)/pow(static_cast<double>(k),2)*sum1;
+    varyhat[i] = pow(sigma[i],2)/pow(static_cast<double>(k),2)*(sum1 - 2*k*sum2 + pow(static_cast<double>(k),2));
     varterm2[i] = -2*k*sum2;
   }
 
@@ -75,11 +75,11 @@ int knnvarfun(int k, double *ref, int refDim1, int refDim2, double *refdata, dou
 	sum2 += RMtrx[(ind1-1)*(refDim1 + tarDim1) + refDim1 + j];
 	sum3 += RMtrx[(ind3-1)*(refDim1 + tarDim1) + refDim1 + i];
       }
-      tempsum1 += sigma[i] * sigma[j]/ pow(k,2) * sum1;
-      tempsum2 += sigma[i] * sigma[j]/ pow(k,2) * (sum1 - k*sum2 - k*sum3 + pow(k,2));
+      tempsum1 += sigma[i] * sigma[j]/ pow(static_cast<double>(k),2) * sum1;
+      tempsum2 += sigma[i] * sigma[j]/ pow(static_cast<double>(k),2) * (sum1 - k*sum2 - k*sum3 + pow(static_cast<double>(k),2));
     }
   }
-  VarYm1 = tempsum1/ pow(tarDim1,2); VarYm2 = tempsum2/ pow(tarDim1,2);
+  VarYm1 = tempsum1/ pow(static_cast<double>(tarDim1),2); VarYm2 = tempsum2/ pow(static_cast<double>(tarDim1),2);
   //cout<<Ybar<<endl;
   //cout<<VarYm1<<endl;
   //cout<<VarYm2<<endl;

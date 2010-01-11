@@ -1,7 +1,7 @@
 Package: nnDiag
 Title: k-Nearest Neighbor Diagnostic Tools
-Version: 0.0-4
-Date: 2009-11-24
+Version: 0.0-5
+Date: 2010-01-11
 Author: Brian Walters <walte137@msu.edu>, Andrew O. Finley
         <finleya@msu.edu>, Zhen Zhang <zhangz19@stt.msu.edu>
 Maintainer: Brian Walters <walte137@msu.edu>
@@ -13,6 +13,6 @@ License: GPL (>= 2)
 URL: http://blue.for.msu.edu/NAFIS/software.html
 LazyLoad: yes
 ZipData: no
-Packaged: 2009-11-24 21:24:42 UTC; brian
+Packaged: 2010-01-11 15:07:31 UTC; brian
 Repository: CRAN
-Date/Publication: 2009-11-25 08:29:45
+Date/Publication: 2010-01-11 18:10:16
